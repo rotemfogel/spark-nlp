@@ -12,15 +12,14 @@ lazy val root = (project in file("."))
     ),
     // @formatter:off
     libraryDependencies ++= {
-      val excludeTensorFlow = ExclusionRule(organization="org.tensorflow")
       Seq(
-        "org.apache.spark"              %% "spark-mllib"                 % "3.1.1" % Provided,
-        "com.johnsnowlabs.nlp"          %% "spark-nlp"                   % "3.4.0" % Provided,
-        "com.github.scopt"              %% "scopt"                       % "4.0.1"
+        "org.apache.spark"      %% "spark-mllib"    % "3.1.2", // % Provided,
+        "com.johnsnowlabs.nlp"  %% "spark-nlp"      % "3.4.0", // % Provided,
+        "com.github.scopt"      %% "scopt"          % "4.0.1"
       )
     },
     // @formatter:on
-    scalacOptions ++= Seq(
+    Compile / scalacOptions ++= Seq(
       "-encoding", "UTF-8",
       "-target:jvm-1.8",
       "-deprecation",
